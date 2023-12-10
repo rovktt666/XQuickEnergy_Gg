@@ -778,6 +778,7 @@ public class AntForest {
                     }
                     if (Config.doubleCard() && doubleEndTime < System.currentTimeMillis()) {
                         if (Config.isDoubleCardTime() && !selfId.equals(userId) && Statistics.canDoubleToday()) {
+                            exchangeEnergyDoubleClick(1);
                             useDoubleCard();
                         }
                     }
@@ -941,7 +942,7 @@ public class AntForest {
                 }
                 if (skuId != null) {
                     for (int exchangeCount = 1; exchangeCount <= count; exchangeCount++) {
-                        if (Statistics.canExchangeDoubleCardToday()) {
+                        //if (Statistics.canExchangeDoubleCardToday()) {
                             jo = new JSONObject(AntForestRpcCall.queryVitalityStoreIndex());
                             if ("SUCCESS".equals(jo.getString("resultCode"))) {
                                 int totalVitalityAmount = jo.getJSONObject("userVitalityInfoVO")
@@ -963,10 +964,10 @@ public class AntForest {
                                     break;
                                 }
                             }
-                        } else {
+                        /*} else {
                             Log.recordLog("兑换次数已到上限！", "");
                             break;
-                        }
+                        }*/
                     }
                 }
             } else {
