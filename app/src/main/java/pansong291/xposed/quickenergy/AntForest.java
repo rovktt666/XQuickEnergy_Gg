@@ -702,7 +702,8 @@ public class AntForest {
                     }
                     if (Config.doubleCard() && doubleEndTime < System.currentTimeMillis()) {
                         if (Config.isDoubleCardTime() && !selfId.equals(userId) && Statistics.canDoubleToday()) {
-                            useDoubleCard();
+                        exchangeEnergyDoubleClick(1);
+                        useDoubleCard();
                         }
                     }
                     s = AntForestRpcCall.batchRobEnergy(userId, bubbleId);
