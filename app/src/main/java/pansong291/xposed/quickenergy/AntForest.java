@@ -714,9 +714,11 @@ public class AntForest {
             if ("SUCCESS".equals(jo.getString("resultCode"))) {
                 offerCollectQueue();
                 JSONArray jaBubbles = jo.getJSONArray("bubbles");
+                jo = jaBubbles.getJSONObject(0);
                 bubbleId = new ArrayList<>();
                 for (int i = 0; i < jaBubbles.length(); i++) {
                     JSONObject bubble = jaBubbles.getJSONObject(i);
+                    
                     if (bubble.getBoolean("canBeRobbedAgain")) {
                         bubbleId.add(String.valueOf(bubble.getLong("id")));
                     }
