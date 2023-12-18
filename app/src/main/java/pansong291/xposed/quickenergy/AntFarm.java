@@ -326,7 +326,7 @@ public class AntFarm {
                     s = AntFarmRpcCall.sleep();
                     jo = new JSONObject(s);
                     if ("SUCCESS".equals(jo.getString("memo"))) {
-                        Log.farm("小鸡睡觉🛌");
+                        Log.farm("小鸡睡觉");
                     }
                 }
             }
@@ -522,7 +522,7 @@ public class AntFarm {
             if ("SUCCESS".equals(memo)) {
                 double harvest = jo.getDouble("harvestBenevolenceScore");
                 harvestBenevolenceScore = jo.getDouble("finalBenevolenceScore");
-                Log.farm("收取鸡蛋🥚[" + harvest + "颗]#剩余" + harvestBenevolenceScore + "颗");
+                Log.farm("收取鸡蛋[" + harvest + "颗]#剩余" + harvestBenevolenceScore + "颗");
             } else {
                 Log.recordLog(memo, s);
             }
@@ -557,7 +557,7 @@ public class AntFarm {
                     if ("SUCCESS".equals(memo)) {
                         jo = jo.getJSONObject("donation");
                         harvestBenevolenceScore = jo.getDouble("harvestBenevolenceScore");
-                        Log.farm("捐赠活动❤️[" + activityName + "]#累计捐赠" + jo.getInt("donationTimesStat") + "次");
+                        Log.farm("捐赠活动[" + activityName + "]#累计捐赠" + jo.getInt("donationTimesStat") + "次");
                         Statistics.donationEgg(userId);
                     } else {
                         Log.recordLog(memo, s);
@@ -728,7 +728,7 @@ public class AntFarm {
                         if ("VIEW".equals(jo.optString("taskMode")) || bizKeyList.contains(bizKey)) {
                             jo = new JSONObject(AntFarmRpcCall.doFarmTask(bizKey));
                             if ("SUCCESS".equals(jo.getString("memo"))) {
-                                Log.farm("庄园任务🧾[" + title + "]#获得饲料" + awardCount + "g");
+                                Log.farm("庄园任务[" + title + "]#获得饲料" + awardCount + "g");
                             } else {
                                 Log.recordLog(jo.getString("memo"), jo.toString());
                             }
