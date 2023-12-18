@@ -97,7 +97,7 @@ public class MainActivity extends Activity {
             version = " v" + packageInfo.versionName;
         } catch (PackageManager.NameNotFoundException ignored) {
         }
-        this.setTitle(芝麻小优化版本 + version);
+        this.setTitle("芝麻小优化版本" + version);
 
         setModuleActive(isExpModuleActive(this));
         PermissionUtil.requestPermissions(this);
