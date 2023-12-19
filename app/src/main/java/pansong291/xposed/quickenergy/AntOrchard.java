@@ -133,7 +133,7 @@ public class AntOrchard {
                         taobaoData = jo.getString("taobaoData");
                         jo = new JSONObject(taobaoData);
                         String stageAfter = jo.getJSONObject("currentStage").getString("stageText");
-                        Log.farm("农场施肥💩[" + stageAfter + "]");
+                        Log.farm("农场施肥[" + stageAfter + "]");
                         if (!canSpreadManureContinue(stageBefore, stageAfter)) {
                             Statistics.spreadManureToday(userId);
                             return;
@@ -164,7 +164,7 @@ public class AntOrchard {
                 int todayFertilizerNum = fertilizerPacket.getInt("todayFertilizerNum");
                 jo = new JSONObject(AntOrchardRpcCall.extraInfoSet());
                 if ("100".equals(jo.getString("resultCode"))) {
-                    Log.farm("每日肥料💩[" + todayFertilizerNum + "g]");
+                    Log.farm("每日肥料[" + todayFertilizerNum + "g]");
                 } else {
                     Log.i(jo.getString("resultDesc"), jo.toString());
                 }
