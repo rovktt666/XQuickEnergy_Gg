@@ -695,7 +695,7 @@ public class AntFarm {
                     if (jo.has("receiveFoodCount")) {
                         award.append(";肥料*").append(jo.getString("receiveFoodCount"));
                     }
-                    Log.farm("庄园游戏🎮[" + gameType.gameName() + "]#" + award);
+                    Log.farm("庄园游戏[" + gameType.gameName() + "]#" + award);
                     if (jo.optInt("remainingGameCount", 0) > 0) {
                         recordFarmGame(gameType);
                     }
